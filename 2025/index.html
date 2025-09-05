@@ -42,14 +42,7 @@
             margin-top: 20px;
             border-radius: 5px;
         }
-        @media (max-width: 600px) {
-            header {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1em;
-            }
-        }
+        
         .button {
             display: inline-block;
             background-color: #e94560;
@@ -65,6 +58,62 @@
         .button:hover {
             background-color: #ff6b82;
         }
+        
+        /* CSS for the agenda */
+        .agenda {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .agenda h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #1a1a2e; /* Example color to match previous designs */
+        }
+        
+        .agenda-list {
+            list-style: none; /* Removes the default bullet points */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Aligns the list content to the left */
+        }
+        
+        .agenda-list li {
+            display: flex; /* Enables Flexbox for alignment */
+            justify-content: space-between; /* Pushes the two spans to opposite ends */
+            align-items: flex-start; /* Aligns items to the top if they wrap */
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .agenda-list .time {
+            font-weight: bold;
+            flex-shrink: 0; /* Prevents the time from shrinking */
+            margin-right: 15px; /* Adds space between time and topic */
+        }
+        
+        .agenda-list .topic {
+            flex-grow: 1; /* Allows the topic to take up remaining space */
+        }
+        
+        /* For smaller screens, you can stack the items */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1em;
+            }
+            .agenda-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .agenda-list .time {
+                margin-bottom: 5px;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -79,23 +128,48 @@
             Access Granted: Entering the Digital Domain!!
         </h2>
 
-        <div class="agenda" style="text-align: center;">
+        <div class="agenda">
             <h3>Tentative Agenda</h3>
-            <ul style="list-style-position: inside;">
-                <li>11:00 AM – 11:15 AM: Welcome</li>
-                <li>11:15 AM – 11:30 AM: Opening Remarks</li>
-                <li>11:30 AM – 12:15 PM: Keynote Speech</li>
-                <li>12:15 PM – 12:45 PM: Cyber Lab Demo</li>
-                <li>12:45 PM – 1:45 PM: Lunch & Networking (featuring Research Posters)</li>
-                <li>1:45 PM – 2:15 PM: Panel</li>
-                <li>2:15 PM – 3:15 PM: Invited Talks</li>
-                <li>3:15 PM – 3:30 PM: Closing</li>
+            <ul class="agenda-list">
+                <li>
+                    <span class="time">11:00 AM – 11:15 AM:</span>
+                    <span class="topic">Welcome</span>
+                </li>
+                <li>
+                    <span class="time">11:15 AM – 11:30 AM:</span>
+                    <span class="topic">Opening Remarks</span>
+                </li>
+                <li>
+                    <span class="time">11:30 AM – 12:15 PM:</span>
+                    <span class="topic">Keynote Speech</span>
+                </li>
+                <li>
+                    <span class="time">12:15 PM – 12:45 PM:</span>
+                    <span class="topic">Cyber Lab Demo</span>
+                </li>
+                <li>
+                    <span class="time">12:45 PM – 1:45 PM:</span>
+                    <span class="topic">Lunch & Networking (featuring Research Posters)</span>
+                </li>
+                <li>
+                    <span class="time">1:45 PM – 2:15 PM:</span>
+                    <span class="topic">Panel</span>
+                </li>
+                <li>
+                    <span class="time">2:15 PM – 3:15 PM:</span>
+                    <span class="topic">Invited Talks</span>
+                </li>
+                <li>
+                    <span class="time">3:15 PM – 3:30 PM:</span>
+                    <span class="topic">Closing</span>
+                </li>
             </ul>
         </div>
         
         <p>Test your knowledge and prove your skills in the world of cybersecurity.</p>
         <p>Take the quiz to begin your challenge.</p>
         <a href="quiz.html" class="button">Take Quiz</a>
+        <br/>
         
         <img src="2025 CYBERDAY FLIER.png" alt="BSU CyberDay 2025 Flier" class="hacking-image">
         
